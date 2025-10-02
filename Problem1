@@ -1,0 +1,16 @@
+public class Problem1 {
+    public static void main(String[] args) {
+        String name = JOptionPane.showInputDialog("Enter employee name:");
+        double baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Enter base salary:"));
+        String ans = JOptionPane.showInputDialog("Is the employee a manager? (yes/no):");
+
+        if (ans.equalsIgnoreCase("yes")) {
+            double bonus = Double.parseDouble(JOptionPane.showInputDialog("Enter bonus:"));
+            Manager m = new Manager(name, baseSalary, bonus);
+            JOptionPane.showMessageDialog(null, "Total Salary of Manager " + name + ": " + m.getSalary());
+        } else {
+            Employee e = new Employee(name, baseSalary);
+            JOptionPane.showMessageDialog(null, "Total Salary of Employee " + name + ": " + e.getSalary());
+        }
+    }
+}
